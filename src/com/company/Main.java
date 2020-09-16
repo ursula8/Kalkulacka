@@ -12,16 +12,26 @@ public class Main {
                 "\n---------------------------------------\n" +
                 "- Zadaj čísla,ktoré si želáš vynásobiť -\n");
 
-        Scanner citacka = new Scanner(System.in);
-
-        System.out.print("Prvé čislo:");
-        BigInteger prveCislo = citacka.nextBigInteger();
-
-        System.out.print("Druhé čislo:");
-        BigInteger druheCislo = citacka.nextBigInteger();
-
-        BigInteger vysledok = prveCislo.multiply(druheCislo);
-        System.out.println("Výsledok je: " + vysledok);
-
+        Nastavenie();
     }
+
+        static void Nastavenie() {
+        
+            Scanner citacka = new Scanner(System.in);
+
+            try {
+                System.out.print("Prvé čislo:");
+                BigInteger prveCislo = citacka.nextBigInteger();
+
+                System.out.print("Druhé čislo:");
+                BigInteger druheCislo = citacka.nextBigInteger();
+
+                BigInteger vysledok = prveCislo.multiply(druheCislo);
+                System.out.println("Výsledok je: " + vysledok);
+            }
+            catch (Exception e) {
+                System.out.println("Zadali ste nesprávne číslo!\n" + e);
+                Nastavenie();
+            }
+        }
 }
