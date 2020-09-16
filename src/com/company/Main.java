@@ -16,18 +16,44 @@ public class Main {
     }
 
         static void Nastavenie() {
-        
+
+            System.out.println("Želáte si použiť algoritmus:\nBigInteger - 1\nStringMultiplication - 2");
+
             Scanner citacka = new Scanner(System.in);
 
             try {
-                System.out.print("Prvé čislo:");
-                BigInteger prveCislo = citacka.nextBigInteger();
 
-                System.out.print("Druhé čislo:");
-                BigInteger druheCislo = citacka.nextBigInteger();
+                int volba=citacka.nextInt();
+                citacka.nextLine();
+                switch (volba){
+                    case 1:
+                        System.out.println("Vybrali ste si možnosť BigInteger");
 
-                BigInteger vysledok = prveCislo.multiply(druheCislo);
-                System.out.println("Výsledok je: " + vysledok);
+                        System.out.print("Prvé čislo:");
+                        BigInteger prveCislo = citacka.nextBigInteger();
+
+                        System.out.print("Druhé čislo:");
+                        BigInteger druheCislo = citacka.nextBigInteger();
+
+                        BigInteger vysledok = prveCislo.multiply(druheCislo);
+                        System.out.println("Výsledok je: " + vysledok);
+                        break;
+                    case 2:
+
+                        System.out.println("Vybrali ste si možnosť StringMultiplication");
+                        StringMultiplication vyslednecislo=new StringMultiplication();
+
+                        System.out.print("Prvé čislo:");
+                        String prve=citacka.nextLine();
+
+                        System.out.print("Druhé čislo:");
+                        String druhe=citacka.nextLine();
+
+                        vyslednecislo.Nastavhodnoty(prve,druhe);
+                        break;
+                    default:
+                        System.out.println("Zadali ste neplatnú možnosť");
+                }
             }
             catch (Exception e) {
                 System.out.println("Zadali ste nesprávne číslo!\n" + e);
