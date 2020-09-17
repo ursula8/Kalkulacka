@@ -49,7 +49,8 @@ public class Main {
                         System.out.print("Druhé čislo:");
                         String druhe=citacka.nextLine();
 
-                        vyslednecislo.Nastavhodnoty(prve,druhe);
+                        String vysledok2=vyslednecislo.Nastavhodnoty(prve,druhe);
+                        System.out.println("Výsledok je: "+vysledok2);
                         break;
                     default:
                         System.out.println("Zadali ste neplatnú možnosť");
