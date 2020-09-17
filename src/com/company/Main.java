@@ -28,6 +28,7 @@ public class Main {
                 switch (volba){
                     case 1:
                         System.out.println("Vybrali ste si možnosť BigInteger");
+                        BigInt vyslednecisloI=new BigInt();
 
                         System.out.print("Prvé čislo:");
                         BigInteger prveCislo = citacka.nextBigInteger();
@@ -35,13 +36,15 @@ public class Main {
                         System.out.print("Druhé čislo:");
                         BigInteger druheCislo = citacka.nextBigInteger();
 
-                        BigInteger vysledok = prveCislo.multiply(druheCislo);
-                        System.out.println("Výsledok je: " + vysledok);
+                        String vysledok1=vyslednecisloI.Vypocet(prveCislo,druheCislo);
+                        System.out.println("Výsledok je: "+vysledok1);
+                        citacka.nextLine();
+
                         break;
                     case 2:
 
                         System.out.println("Vybrali ste si možnosť StringMultiplication");
-                        StringMultiplication vyslednecislo=new StringMultiplication();
+                        StringMultiplication vyslednecisloS=new StringMultiplication();
 
                         System.out.print("Prvé čislo:");
                         String prve=citacka.nextLine();
@@ -49,16 +52,34 @@ public class Main {
                         System.out.print("Druhé čislo:");
                         String druhe=citacka.nextLine();
 
-                        String vysledok2=vyslednecislo.Nastavhodnoty(prve,druhe);
+                        String vysledok2=vyslednecisloS.Nastavhodnoty(prve,druhe);
                         System.out.println("Výsledok je: "+vysledok2);
                         break;
                     default:
                         System.out.println("Zadali ste neplatnú možnosť");
+                        break;
                 }
             }
             catch (Exception e) {
                 System.out.println("Zadali ste nesprávne číslo!\n" + e);
                 Nastavenie();
             }
+
+            System.out.println("Želáte si pokračovať?- Y/N -");
+
+            String odpoved=citacka.nextLine().toUpperCase();
+
+            if(odpoved.equals("Y")){
+                Nastavenie();
+            }
+            else {
+                System.out.println("Dovidenia!");
+            }
+
         }
-}
+
+
+
+
+        }
+
