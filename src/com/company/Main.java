@@ -9,15 +9,14 @@ public class Main {
 
         System.out.println("\n---------------------------------------\n" +
                 "Vitaj v programe jednoduchá kalkulačka!" +
-                "\n---------------------------------------\n" +
-                "- Zadaj čísla,ktoré si želáš vynásobiť -\n");
+                "\n---------------------------------------" );
 
         Nastavenie();
     }
 
         static void Nastavenie() {
 
-            System.out.println("Želáte si použiť algoritmus:\nBigInteger - 1\nStringMultiplication - 2");
+            System.out.println("Želáte si použiť algoritmus:\n\nBigInteger - 1\nStringMultiplication - 2");
 
             Scanner citacka = new Scanner(System.in);
 
@@ -25,6 +24,7 @@ public class Main {
 
                 int volba=citacka.nextInt();
                 citacka.nextLine();
+
                 switch (volba){
                     case 1:
                         System.out.println("Vybrali ste si možnosť BigInteger");
@@ -77,9 +77,5 @@ public class Main {
             }
 
         }
-
-
-
-
         }
 
